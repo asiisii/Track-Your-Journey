@@ -74,6 +74,13 @@ describe('Trip', () => {
       expect(traveler.present.length).to.be.equal(0)
     })
 
+    it('should have list of user\'s upcoming trips', () => {
+      traveler.getUpcomingTrips();
+      expect(traveler.upcoming.length).to.be.equal(0)
+      traveler = new Traveler(allUsersData[4])
+      expect(traveler.upcoming.length).to.be.equal(0)
+    })
+
     
   })
 })
