@@ -62,6 +62,15 @@ class Traveler {
     // console.log('upcoming trips',this.upcoming);
   }
 
+  getPendingTrips() {
+    this.allTrips.forEach(trip => {
+     if (trip.status === 'pending' && !this.pending.includes(trip)) {
+       this.pending.push(trip)
+     }
+    })
+    // console.log('pending trips',this.pending);
+  }
+
   
 
 
