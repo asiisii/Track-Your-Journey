@@ -93,5 +93,10 @@ describe('Trip', () => {
 
   })
 
-  
+  describe('Trip Methods', () => {
+    it('should be able to calculate the total amount spent on trips', () => {
+      expect(trip.estimateTripCost(10, 8)).to.equal(1740)
+      expect(trip.estimateTripCost(0, 0)).to.equal(0)
+    })
+  })
 })
