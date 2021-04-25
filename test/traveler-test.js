@@ -81,6 +81,13 @@ describe('Trip', () => {
       expect(traveler.upcoming.length).to.be.equal(0)
     })
 
+    it('should have list of user\'s pending trips', () => {
+      traveler.getPendingTrips();
+      expect(traveler.pending.length).to.be.equal(0)
+      traveler = new Traveler(allUsersData[4])
+      expect(traveler.pending.length).to.be.equal(0)
+    })
+
     
   })
 })
