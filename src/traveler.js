@@ -51,6 +51,17 @@ class Traveler {
 
   }
 
+  getUpcomingTrips() {
+    this.allTrips.forEach(trip => {
+      let startDate = new Date(trip.date).getTime();
+      let endDate = startDate + (86400000 * trip.duration)
+      if (endDate > this.currentDate && !this.upcoming.includes(trip)) {
+        this.upcoming.push(trip)
+      }
+    })
+    // console.log('upcoming trips',this.upcoming);
+  }
+
   
 
 
