@@ -50,5 +50,16 @@ describe('Trip', () => {
     })
   })
   
- 
+  describe('Traveler methods', () => {
+    it('should have list of user\'s trips', () => {
+      traveler.getAllTrips(allTripsData, allDestinationData);
+      expect(traveler.allTrips.length).to.be.equal(2)
+      expect(traveler.myDestinations.length).to.be.equal(2)
+      traveler = new Traveler(allUsersData[4])
+      expect(traveler.allTrips.length).to.be.equal(0)
+      expect(traveler.myDestinations.length).to.be.equal(0)
+    })
+
+    
+  })
 })
