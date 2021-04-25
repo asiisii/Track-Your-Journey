@@ -12,6 +12,21 @@ class Traveler {
     this.pending = [];
   }
 
+  getAllTrips(trips, destinations) {
+    trips.forEach(trip => {
+      destinations.forEach(loc => {
+        if (this.id === trip.userID &&
+          trip.destinationID === loc.id &&
+          !this.allTrips.includes(trip) &&
+          !this.myDestinations.includes(loc)) {
+            this.allTrips.push(trip);
+            this.myDestinations.push(loc)
+        }
+      });
+    });
+    return this.allTrips;
+  }
+
   
 
 
