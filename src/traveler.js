@@ -71,7 +71,23 @@ class Traveler {
     // console.log('pending trips',this.pending);
   }
 
-  
+  calAmtSpentThisYear(year, destination) {
+    // console.log(year, destination);
+    let costForFlights, costForLiving;
+    return this.allTrips.reduce((total, trip) => {
+      destination.forEach(loc => {
+        if (year === trip.date.split('/')[0] &&
+          this.id === trip.userID &&
+          trip.destinationID === loc.id) {
+          costForFlights = loc.estimatedFlightCostPerPerson ;
+          costForLiving = trip.duration * loc.estimatedLodgingCostPerDay;
+          total += (costForFlights + costForLiving) * 0.1;
+        }
+      })
+    
+      return total;
+    }, 0)
+  }
 
 
 }
