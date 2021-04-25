@@ -38,6 +38,19 @@ class Traveler {
     // console.log('past trips',this.past);
   }
 
+  getPresentTrips() {
+    this.allTrips.forEach(trip => {
+      let startDate = new Date(trip.date).getTime();
+      let endDate = startDate + (86400000 * trip.duration)
+      if (this.currentDate >= startDate && this.currentDate <= endDate
+        && !this.present.includes(trip)) {
+        this.present.push(trip)
+      }
+    })
+    // console.log('present trips', this.present);
+
+  }
+
   
 
 
