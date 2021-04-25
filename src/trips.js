@@ -14,7 +14,13 @@ class Trip {
     this.tripEndDate;
   }
   
-  
+  estimateTripCost(numOfTravelers, tripDuration) {
+    let costForFlights = numOfTravelers *
+      this.destinations.estimatedFlightCostPerPerson ;
+    let costForLiving = numOfTravelers * tripDuration *
+      this.destinations.estimatedLodgingCostPerDay;
+    return (costForFlights + costForLiving) * 0.1;
+  }
 
   
 
