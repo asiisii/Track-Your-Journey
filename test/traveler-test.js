@@ -88,6 +88,9 @@ describe('Trip', () => {
       expect(traveler.pending.length).to.be.equal(0)
     })
 
-    
+    it('should calulate the total amount spent yearly', () => {
+      let calAmt = traveler.calAmtSpentThisYear('2020', allDestinationData)
+      expect(calAmt).to.equal(0)
+    })
   })
 })
