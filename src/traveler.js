@@ -27,6 +27,17 @@ class Traveler {
     return this.allTrips;
   }
 
+  getPastTrips() {
+    this.allTrips.forEach(trip => {
+      let startDate = new Date(trip.date).getTime();
+      let endDate = startDate + (86400000 * trip.duration)
+      if (endDate < this.currentDate && !this.past.includes(trip)) {
+        this.past.push(trip)
+      }
+    })
+    // console.log('past trips',this.past);
+  }
+
   
 
 
