@@ -14,7 +14,7 @@ const bookTripsBtn = document.getElementById('bookTripsBtn');
 let bookNewTrip = document.getElementById('bookTripBtn')
 const moneySpent = document.getElementById('moneySpent');
 let allTravelers, currentTraveler, allTrips, allDestinations, traveler, total
-
+let estCost = 0;
 const bookSection = document.getElementById('bookSection')
 const inputError = document.getElementById('inputError');
 let duration = document.getElementById('duration')
@@ -29,8 +29,7 @@ upcomingTripsBtn.addEventListener('click', () => domUpdates.displayCards('upcomi
 pendingTripsBtn.addEventListener('click', () => domUpdates.displayCards('pending'))
 bookTripsBtn.addEventListener('click', () => {
   // domUpdates.displayCards('pending') 
-  allTripsCard.innerHTML = '' 
-  message.innerText = ''
+ 
   domUpdates.hideBookingOption()
 })
 bookNewTrip.addEventListener('click', () => domUpdates.bookTrip())
@@ -51,8 +50,8 @@ const domUpdates = {
     traveler.getPresentTrips();
     traveler.getUpcomingTrips();
     traveler.getPendingTrips();
-    total = traveler.calAmtSpentThisYear('2020', allDestinations);
-    // moneySpent.innerHTML = `This year you spent $<span class="money">${total}</span> on trips!`;
+    total = traveler.calAmtSpentThisYear('2021', allDestinations);
+    moneySpent.innerHTML = `This year you spent $<span class="money">${total + estCost}</span> on trips!`;
 
     let travelerName = traveler.name.split(' ')[0]
     user.innerHTML = `Hey, ${travelerName}!`
@@ -73,7 +72,8 @@ const domUpdates = {
     //   moneySpent.innerHTML = `All Trips`
     // }
     if(traveler[tripType].length > 0) {
-      moneySpent.innerHTML = `This year you spent $<span class="money">${total}</span> on trips!`;
+      total = traveler.calAmtSpentThisYear('2021', allDestinations);
+      moneySpent.innerHTML = `This year you spent $<span class="money">${total + estCost}</span> on trips!`;
       message.innerText = ''
       traveler.myDestinations.forEach(loc => {
         const findTrip = traveler[tripType].find(trip => {
@@ -138,6 +138,8 @@ const domUpdates = {
   },
 
   hideBookingOption: () => {
+    allTripsCard.innerHTML = '' 
+    message.innerText = ''
     bookSection.classList.remove('hidden')
     moneySpent.innerHTML = `Let's book your next trip!!!`
   },
@@ -153,7 +155,7 @@ const domUpdates = {
       duration.value) {
         
         if (bookNewTrip.innerHTML === `Estimate Cost`) {
-          let estCost = trip.estimateTripCost(Number(travelers.value), 
+          estCost = trip.estimateTripCost(Number(travelers.value), 
             Number(duration.value), Number(destinationList.value));
             console.log(estCost);
           moneySpent.innerHTML = `Cost for this trip will be 
@@ -161,6 +163,8 @@ const domUpdates = {
           bookNewTrip.innerHTML = `Confirm Booking!`
         } else {
           domUpdates.bookedTripInfo(formattedDate)
+          // moneySpent.innerHTML = `This year you spent $<span class="money">${total + estCost}</span> on trips!`;
+          // console.log(total + estCost);
           moneySpent.innerText = `You've Booked Your Next Trip Successfully!!!`
           bookNewTrip.innerText = `Estimate Cost`
         }
@@ -176,6 +180,8 @@ const domUpdates = {
     traveler.allTrips.push(newTrip)
     traveler.upcoming.push(newTrip)
     traveler.pending.push(newTrip)
+    // total = traveler.calAmtSpentThisYear('2021', allDestinations);
+    // moneySpent.innerHTML = `This year you spent $<span class="money">${total}</span> on trips!`;
     // console.log(traveler.allTrips, 'newALlTrips');
   }
 
