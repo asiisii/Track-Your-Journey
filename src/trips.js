@@ -14,11 +14,16 @@ class Trip {
     this.tripEndDate;
   }
   
-  estimateTripCost(numOfTravelers, tripDuration) {
+  estimateTripCost(numOfTravelers, tripDuration, locID) {
+    // console.log(givenID);
+    let findDestObj = this.destinations.find(loc => loc.id === locID)
+    // console.log(findDestObj);
+    // console.log(this.destinations.estimatedFlightCostPerPerson);
+    // console.log(this.destinations.estimatedLodgingCostPerDay);
     let costForFlights = numOfTravelers *
-      this.destinations.estimatedFlightCostPerPerson ;
+    findDestObj.estimatedFlightCostPerPerson ;
     let costForLiving = numOfTravelers * tripDuration *
-      this.destinations.estimatedLodgingCostPerDay;
+    findDestObj.estimatedLodgingCostPerDay;
     return (costForFlights + costForLiving) * 0.1;
   }
 
