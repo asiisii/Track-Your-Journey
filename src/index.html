@@ -1,13 +1,84 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
   <head>
-    <title>Webpack Starter Kit</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Turing traveler tracker, final project, Track Travler, api data, login, authentication, vanilla js, html, css, cards">
+    <title>Track Your Journey</title>
   </head>
   <body>
-    <h1>Webpack Starter Kit</h1>
+    <section class="loginpage" id="loginpage">
+      <h1 class="login-error" id="loginError"></h1>
+      <form class="login-form" id="loginForm" aria-label="Login page">
+        <img class="worm" src="images/avatar.png" alt="worm avatar img"> 
+        <label for="uname">Username</label>
+        <input type="text" class="uname" id="uname" placeholder="Enter Username" name="uname" autocomplete="off" value='' required>
+        
+        <label for="psw">Password</label>
+        <input type="password" class="password" id="password" placeholder="Enter Password" name="psw" autocomplete="off" required>
+        
+        <button type="submit" class="login" id="login">SIGN IN</button> 
+      </form>
+    </section> 
 
-    <img src="./images/turing-logo.png" alt="turing logo" height="100px" width="100px">
 
-    <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->
+    <main class="dashboard hidden" id="dashboard">
+
+      <section class="beach-container">
+        <img src="images/beach.png" alt="ocean view" class="beach">
+        <article class="views-container">
+          <div class="welcome">
+            <p class="user" id="user"></p>
+            <p class="welcome-message"> Travel more before we move to Mars</p>
+          </div>
+        </article>
+      </section>
+  
+  
+      <header>
+        <nav>
+          <button class ='home btn' id="home">All Trips</button>
+          <button class ='past-trips btn' id="pastTrips">Past Trips</button>
+          <button class ='present-trips btn' id="presentTrips">Present Trips</button>
+          <button class ='upcoming-trips btn' id="upcomingTrips">Upcoming Trips</button>
+          <button class ='pending-trips btn' id="pendingTrips">Pending Trips</button>
+          <button class ='book-trips btn' id="bookTripsBtn">Book Trips</button>
+        </nav>
+        <div class="account">
+         
+          <h1 class="username" id="username"></h1>
+          <button class="logout btn" id="logout">Logout</button>
+        </div>
+      </header>
+      <h1 class="money-spent" id="moneySpent"></h1>
+  
+      <section class="book-section hidden" id="bookSection">
+        <form class="book" id="book" role="book trip">
+          <label for="date">Departure Date: </label>
+          <input type="date" id="start" name="trip-start"min="2021-04-25" max="2026-12-31" value ='' required>
+          <label  for="duration">Duration (days): </label>
+          <input class="duration" id="duration" type="number" min="1" placeholder="1" required>
+          <label for="travelers"># of travelers: </label>
+          <input class="travelers" id="travelers" type="number" min="1" placeholder="1" required>
+          <label for="destination">Where to?: </label>
+          <select class="destinationList" id="destinationList" name="destination" required>
+            <option value='' disabled selected hidden>Where to?</option>
+          </select>
+          <button type="submit" class="book-trip-btn" id="bookTripBtn">Estimate Cost</button>
+        </form>
+        <h4 class="input-error-message" id="inputError"></h4>
+      </section>
+  
+      <section class="cards container" id="container"></section>
+      <h1 class="message"  id="message"> </h1>
+      <p class="js-error"></p>
+    </main>
   </body>
 </html>
+
+
+
+
+
+
