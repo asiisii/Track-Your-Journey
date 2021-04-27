@@ -155,7 +155,8 @@ const domUpdates = {
         if (bookNewTrip.innerHTML === `Estimate Cost`) {
           let estCost = trip.estimateTripCost(Number(travelers.value), 
             Number(duration.value), Number(destinationList.value));
-            moneySpent.innerHTML = `Cost for this trip will be 
+            console.log(estCost);
+          moneySpent.innerHTML = `Cost for this trip will be 
             $<span class="money">${estCost}</span>`
           bookNewTrip.innerHTML = `Confirm Booking!`
         } else {
