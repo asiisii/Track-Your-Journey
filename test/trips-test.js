@@ -65,12 +65,12 @@ describe('Trip', () => {
     it('should have destination info', () => {
       expect(trip.destinations).to.be.deep.equal(
         {
-          id: 31,
-          destination: "Colombo, Sri Lanka",
-          estimatedLodgingCostPerDay: 55,
-          estimatedFlightCostPerPerson: 1300,
-          alt: "people walking inside flea market",
-          image: "https://images.unsplash.com/photo-1578159802020-13ec49d669df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+          id: 1,
+          destination: "Lima, Peru",
+          estimatedLodgingCostPerDay: 70,
+          estimatedFlightCostPerPerson: 400,
+          alt: "overview of city buildings with a clear sky",
+          image: "https://images.unsplash.com/photo-1489171084589-9b5031ebcf9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80"
         })
 
       trip = new Trip(allTripsData[0], allDestinationData[1])
@@ -95,8 +95,9 @@ describe('Trip', () => {
 
   describe('Trip Methods', () => {
     it('should be able to calculate the total amount spent on trips', () => {
-      expect(trip.estimateTripCost(10, 8)).to.equal(1740)
-      expect(trip.estimateTripCost(0, 0)).to.equal(0)
+      trip = new Trip(allTripsData, allDestinationData)
+      expect(trip.estimateTripCost(10, 8, 33)).to.equal(8110)
+      expect(trip.estimateTripCost(0, 0, 0)).to.equal(`Invalid data`)
     })
   })
 })
