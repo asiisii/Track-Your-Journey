@@ -3,7 +3,7 @@ class Traveler {
     this.id = travelerInfo.id;
     this.name = travelerInfo.name;
     this.travelerType = travelerInfo.travelerType;
-    this.currentDate = new Date('2020/07/01').getTime();
+    this.currentDate = new Date().getTime();
     this.allTrips = [];
     this.myDestinations = [];
     this.past = [];
@@ -13,6 +13,7 @@ class Traveler {
   }
 
   getAllTrips(trips, destinations) {
+    // console.log(trips);
     trips.forEach(trip => {
       destinations.forEach(loc => {
         if (this.id === trip.userID &&
@@ -24,6 +25,8 @@ class Traveler {
         }
       });
     });
+    // this.allTrips.pop()
+    console.log('all of my trips', this.allTrips);
     return this.allTrips;
   }
 

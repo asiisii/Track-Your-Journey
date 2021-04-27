@@ -1,0 +1,106 @@
+@import "mixin";
+
+.loginpage {
+  @include flexStyle(column);
+  background-image: url('../images/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.login-form {
+  @include flexStyle(column);
+  background: $login-background;
+  padding: 30px;
+  width: 25vw;
+  margin: auto;
+  border-radius: 2rem;
+  background-size: 300% 200%;
+  animation: gradient 8s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.worm {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  margin: auto;
+}
+
+input[type=text], 
+input[type=password], 
+button[type=submit],
+input[type=date], 
+input[type=number],
+select {
+  @include inputStyle()
+}
+
+.login-form > label,
+.login {
+  font-size: 2rem;
+  color: white;
+}
+
+label[type=date] {
+  font-size: 2rem;
+}
+
+.login {
+  background-color: #83c479;
+  color: blue;
+  font-weight: 900;
+  
+  &:hover {
+    background-color: rgb(39, 83, 10);
+    color: white;
+  }
+}
+
+.login-error {
+  background-color: red;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.login-form {
+  box-shadow: $form-shadow;
+}
+
+.book {
+  @include flexStyle(column);
+  justify-content: center;
+}
+
+.book-trip-btn {
+  width: 100%;
+  font-size: 18px;
+  background-color: rgb(56, 89, 150);
+  color: white;
+  padding: 14px 20px;
+  cursor: pointer;
+  border-radius: 0.5rem;
+
+  &:hover {
+    background-color: $hover-color;
+  } 
+}
+
+.book-section {
+  border-radius: 1rem;
+  background-color: transparent;
+  color: white;
+  width: 30%;
+  margin: 0 auto;
+}

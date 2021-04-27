@@ -1,7 +1,144 @@
-/* This is an example of using Sass, otherwise plain CSS works too*/
-$primary-background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
-;
+@import "reset";
+@import "variables";
+@import "formstyle";
+@import "cardpage";
+@import "mixin";
+@import "responsive";
 
 body {
   background: $primary-background;
 }
+
+header {
+  @include flexStyle(row);
+  background: $primary-background; 
+  height: 10%;
+}
+
+nav {
+  margin: 2%;
+  width: 80%;
+}
+
+.icons {
+  height: 30px;
+  border-radius: 50%;
+}
+
+a, 
+.logo,
+p:first-child {
+  color: white;
+}
+
+p > img {
+  margin-right: 2%;
+}
+
+.username {
+  font-size: 20px;
+  margin-bottom: 4%;
+}
+
+/* --------------Header End------------- */
+
+.beach {
+  width: 100%;
+  height: 300px;
+}
+
+.beach-container {
+  position: relative;
+  text-align: center;
+}
+
+.views-container {
+  @include flexStyle(row);
+  justify-content: space-between;
+  position: absolute;
+  width: 50%;
+  top: 4%;
+  left: 6%;
+}
+
+.user {
+  text-align: left;
+  font-size: 1.5rem;
+}
+.welcome-message{
+  text-align: left;
+  font-size: 4rem;
+  color: rgb(224, 153, 71);
+}
+
+// .worm {
+//   height: 50px;
+//   width: 50px;
+//   border-radius: 50%;
+// }
+
+.account {
+  // display: block;
+  // width: 40%;
+  // justify-content: space-between;
+  margin: 10px 45px 5px 0;
+
+}
+
+.btn {
+  background-color: #d2e9e9;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: orange;
+  color: rgb(0, 0, 0);
+  padding: 5px 20px;
+  font-size: 16x;
+  
+}
+
+.btn:hover {
+  background-color: rgb(224, 153, 71);
+}
+
+.logout {
+  background-color: rgb(56, 89, 150);
+  padding: 5px 55px;
+  color: #ffff;
+}
+
+nav > :first-child {
+  margin-left: 1%;
+}
+
+.money-spent,
+.message {
+  text-align: center;
+  color: white;
+  margin: 1%;
+}
+
+.money-spent {
+  font-size: 1.5rem;
+}
+.message {
+  color: black;
+  background: yellow;
+}
+
+.name {
+  color: #0f3030;
+}
+
+.money {
+  color: orange;
+}
+
+// hidden
+
+.hidden {
+  display: none !important;
+}
+
+
+
