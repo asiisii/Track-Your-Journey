@@ -33,11 +33,13 @@ logoutSubmit.addEventListener('click', displayLogin)
 
 function checkCredentials() {
   let givenUsername = usernameInput.value;
+  let justname = givenUsername.split('traveler')[0] === ''
   let givenPassword = passInput.value;
   currUserID = Number(givenUsername.split('').slice(8).join(""))
   
   if (givenPassword && givenUsername) {
-    if(currUserID && currUserID > 0 && currUserID < 50 && 
+    if(currUserID && currUserID > 0 && 
+      currUserID < 50 && justname &&
       givenPassword === 'travel2020') {
       fetchData()
       loginpage.classList.add('hidden')
@@ -79,7 +81,7 @@ function fetchData() {
 // if(userID === '09') {
 //   console.log('yeeet')
 // }
-// apiCalls.deleteTrip(1619485194341)
+// apiCalls.deleteTrip(1619554130751)
 
 
 

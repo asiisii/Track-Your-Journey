@@ -6,6 +6,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  // overflow: hidden;
 }
 
 .login-form {
@@ -39,22 +40,31 @@
 }
 
 input[type=text], 
-input[type=password], 
-button[type=submit],
 input[type=date], 
 input[type=number],
+input[type=password], 
+button[type=submit],
 select {
   @include inputStyle()
+  // width: 100%;
+  // padding: 12px 20px;
+  // margin: 35px 0;
+  // border: 1px solid #7ab9c2;
+  // border-radius: 0.5rem;
 }
 
-.login-form > label,
-.login {
+.login-form > label {
   font-size: 2rem;
   color: white;
 }
 
-label[type=date] {
-  font-size: 2rem;
+.book > input {
+  padding: 7px 20px;
+  margin: 20px 0;
+}
+
+.book > label {
+  font-size: 1.3rem;
 }
 
 .login {

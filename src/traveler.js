@@ -26,7 +26,7 @@ class Traveler {
       });
     });
     // this.allTrips.pop()
-    // console.log('all of my trips', this.allTrips);
+    console.log('all of my trips', this.allTrips);
     return this.allTrips;
   }
 
