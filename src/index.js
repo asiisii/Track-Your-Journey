@@ -27,7 +27,7 @@ function checkTravelerCredentials() {
   givenPassword = passInput.value;
   currUserID = Number(givenUsername.split('').slice(8).join(""))
   if (givenPassword && givenUsername) {
-    checkAgencyCredentials()
+    // checkAgencyCredentials()
     if (!checkAgencyCredentials()) {
       if(currUserID && currUserID > 0 && 
         currUserID < 50 && justname &&
