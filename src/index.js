@@ -36,6 +36,7 @@ function checkTravelerCredentials() {
         loginpage.classList.add('hidden')
         dashboard.classList.remove('hidden')
       } else {
+        loginError.innerText = `You have entered an invalid username or password`
         logForm.reset();
       }
     }
@@ -51,10 +52,7 @@ function checkAgencyCredentials() {
     agencyboard.classList.remove('hidden')
     fetchDataForAgent()
     return true;
-  } else {
-    loginError.innerText = `You have entered an invalid username or password`
-    return false;
-  }
+  } 
     
 }
 
