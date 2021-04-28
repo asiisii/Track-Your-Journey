@@ -1,6 +1,6 @@
 import { expect } from 'chai';
-import {allTripsData, allDestinationData} from '../src/data/sampleTestData';
 import Trip from '../src/trips';
+import {allTripsData, allDestinationData} from '../src/data/sampleTestData';
 
 describe('Trip', () => {
   let trip;
