@@ -79,15 +79,8 @@ npm install
 ---
 
 ## How to View Your Code in Action
-1. In the terminal, run:
-```bash
-npm start
-```
-2. You will see a bunch of lines output to your terminal. One of those lines will be something like:
-```bash
-Project is running at http://localhost:8080/
-```
-3. Go to `http://localhost:8080/` in your browser to view your code running in the browser.
+1. You'll need this [Webpack Starter Kit](https://github.com/turingschool-examples/webpack-starter-kit) repo. Setup instructions are in the README. You will also need to clone down this local server and have it running in a separate tab in your terminal each time you run your client.
+2. Click on this [website link](https://asiisii.github.io/Track-Your-Journey/)
 
 ---
 
