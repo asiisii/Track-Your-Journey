@@ -35,7 +35,6 @@ class Agent {
           total += (costForFlights + costForLiving) * 0.1;
         }
       })
-    
       return total;
     }, 0)
   }
@@ -62,6 +61,7 @@ class Agent {
       return false;
     }
   }
+  
 }
 
 export default Agent;

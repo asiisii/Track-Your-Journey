@@ -26,18 +26,13 @@ export const apiCalls = {
         console.log(`${endpath}`,data[endpath]);
         return data[endpath];
       })
-      // .then(data => data.travelers)
       .catch(err => apiData.displayErrorMessage(err));
   },
 
   currentTraveler(endpath) {
     return fetch(`${path}${endpath}`)
       .then(apiCalls.checkForError)
-      .then(data => {
-        console.log(`Welcome back,`,data.name);
-        return data;
-      })
-      // .then(data => data)
+      .then(data => data)
       .catch(err => apiData.displayErrorMessage(err));
   },
 
@@ -52,7 +47,6 @@ export const apiCalls = {
     })
     .then(apiCalls.checkForError)
     .then(data => data)
-    // .then(location.reload())
     .catch(err => apiData.displayErrorMessage(err));
   },
 
@@ -69,40 +63,5 @@ export const apiCalls = {
       .catch(err => apiData.displayErrorMessage(err));
 
   }
-  // allTravelers() {
-  //   return fetch(`${path}travelers`)
-  //   .then(apiCalls.checkForError)
-  //   .then(data => {
-  //     console.log(data.travelers);
-  //     return data.travelers;
-  //   })
-  //   // .then(data => data.travelers)
-  //   .catch(err => apiData.displayErrorMessage(err));
-  // },
-
-
-  // allTrips() {
-  //   return fetch(`${path}trips`)
-  //   .then(apiCalls.checkForError)
-  //   .then(data => {
-  //     console.log(data.trips);
-  //     return data.trips;
-  //   })
-  //   // .then(data => data.trips)
-  //   .catch(err => apiData.displayErrorMessage(err));
-  // },
-
-  // allDestinations() {
-  //   return fetch(`${path}destinations`)
-  //   .then(apiCalls.checkForError)
-  //   .then(data => {
-  //     console.log(data.destinations);
-  //     return data.trips;
-  //   })
-  //   // .then(data => data.trips)
-  //   .catch(err => apiData.displayErrorMessage(err));
-  // }
-
-//--------------------------------
 
 };

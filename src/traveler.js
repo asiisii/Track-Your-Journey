@@ -13,7 +13,6 @@ class Traveler {
   }
 
   getAllTrips(trips, destinations) {
-    // console.log(trips);
     trips.forEach(trip => {
       destinations.forEach(loc => {
         if (this.id === trip.userID &&
@@ -25,8 +24,6 @@ class Traveler {
         }
       });
     });
-    // this.allTrips.pop()
-    console.log('all of my trips', this.allTrips);
     return this.allTrips;
   }
 
@@ -38,7 +35,6 @@ class Traveler {
         this.past.push(trip)
       }
     })
-    // console.log('past trips',this.past);
   }
 
   getPresentTrips() {
@@ -50,7 +46,6 @@ class Traveler {
         this.present.push(trip)
       }
     })
-    // console.log('present trips', this.present);
 
   }
 
@@ -62,7 +57,6 @@ class Traveler {
         this.upcoming.push(trip)
       }
     })
-    // console.log('upcoming trips',this.upcoming);
   }
 
   getPendingTrips() {
@@ -71,11 +65,9 @@ class Traveler {
        this.pending.push(trip)
      }
     })
-    // console.log('pending trips',this.pending);
   }
 
   calAmtSpentThisYear(year, destination) {
-    // console.log(year, destination);
     let costForFlights, costForLiving;
     return this.allTrips.reduce((total, trip) => {
       destination.forEach(loc => {
@@ -87,11 +79,9 @@ class Traveler {
           total += (costForFlights + costForLiving) * 0.1;
         }
       })
-    
       return total;
     }, 0)
   }
-
 
 }
 
