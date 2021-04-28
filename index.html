@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Turing traveler tracker, final project, Track Travler, api data, login, authentication, vanilla js, html, css, cards">
+    <title>Track Your Journey</title>
+  </head>
+  <body>
+    <section class="loginpage" id="loginpage">
+      <h1 class="login-error" id="loginError"></h1>
+      <form class="login-form" id="loginForm" aria-label="Login page">
+        <img class="worm" src="./src/images/avatar.png" alt="worm avatar img"> 
+        <label for="uname">Username</label>
+        <input type="text" class="uname" id="uname" placeholder="Enter Username" name="uname" autocomplete="off" value='' required>
+        <label for="psw">Password</label>
+        <input type="password" class="password" id="password" placeholder="Enter Password" name="psw" autocomplete="off" required>
+        <button type="submit" class="login" id="login">SIGN IN</button> 
+      </form>
+    </section> 
+    <main class="dashboard hidden" id="dashboard">
+      <section class="beach-container">
+        <img src="./src/images/beach.png" alt="ocean view" class="beach">
+        <article class="views-container">
+          <div class="welcome">
+            <p class="user" id="user"></p>
+            <p class="welcome-message"> Travel more before we move to Mars</p>
+          </div>
+        </article>
+      </section>
+      <header>
+        <nav>
+          <button class ='home btn' id="home">All Trips</button>
+          <button class ='past-trips btn' id="pastTrips">Past Trips</button>
+          <button class ='present-trips btn' id="presentTrips">Present Trips</button>
+          <button class ='upcoming-trips btn' id="upcomingTrips">Upcoming Trips</button>
+          <button class ='pending-trips btn' id="pendingTrips">Pending Trips</button>
+          <button class ='book-trips btn' id="bookTripsBtn">Book Trips</button>
+        </nav>
+        <div class="account">
+          <h1 class="username" id="username"></h1>
+          <button class="logout btn" id="logout">Logout</button>
+        </div>
+      </header>
+      <h1 class="money-spent" id="moneySpent"></h1>
+      <section class="book-section hidden" id="bookSection">
+        <form class="book" id="book" role="book trip">
+          <label for="date">Departure Date: </label>
+          <input class="start" type="date" id="start" name="trip-start"min="2021-04-25" max="2026-12-31" value ='' required>
+          <label  for="duration">Duration (days): </label>
+          <input class="duration" id="duration" type="number" min="1" placeholder="1" required>
+          <label for="travelers"># of travelers: </label>
+          <input class="travelers" id="travelers" type="number" min="1" placeholder="1" required>
+          <label for="destination">Where to?: </label>
+          <select class="destinationList" id="destinationList" name="destination" required>
+            <option value='' disabled selected hidden>Where to?</option>
+          </select>
+          <button type="submit" class="book-trip-btn" id="bookTripBtn">Estimate Cost</button>
+        </form>
+        <h4 class="input-error-message" id="inputError"></h4>
+      </section>
+      <section class="cards container" id="container"></section>
+      <h1 class="message"  id="message"> </h1>
+      <p class="js-error"></p>
+    </main>
+    <section class="agencyboard hidden" id="agencyboard">
+      <img src="./src/images/agent.png" alt="pic of airplane made with travel words" class="agentimg">
+      <header class="agent-header" id="agentHeader">
+        <nav class="agent-nav" id="agentNav">
+          <button class="pending-trips" id="requestedTrips">New Trip Requests</button>
+          <button class="curr-travelers" id="currTravelers">Travelers On Trips</button>
+        </nav>
+        <button class="agentout logout btn " id="agentout">Logout</button> 
+      </header>
+      <h1 class="income" id="income"></h1>
+      <h1 class="total-travelers" id="totalTravelers" ></h1>
+      <section class="agent-view container" id="agentView"></section>
+    </section>
+  <script src="main.bundle.js"></script></body>
+</html>
+
+
+
+
+
+
