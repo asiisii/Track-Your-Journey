@@ -4,8 +4,8 @@ class Traveler {
     this.name = travelerInfo.name;
     this.travelerType = travelerInfo.travelerType;
     this.currentDate = new Date().getTime();
-    this.allTrips = [];
     this.myDestinations = [];
+    this.allTrips = [];
     this.past = [];
     this.present = [];
     this.upcoming = [];
@@ -20,7 +20,7 @@ class Traveler {
           !this.allTrips.includes(trip) &&
           !this.myDestinations.includes(loc)) {
             this.allTrips.push(trip);
-            this.myDestinations.push(loc)
+            this.myDestinations.push(loc);
         }
       });
     });
@@ -30,9 +30,9 @@ class Traveler {
   getPastTrips() {
     this.allTrips.forEach(trip => {
       let startDate = new Date(trip.date).getTime();
-      let endDate = startDate + (86400000 * trip.duration)
+      let endDate = startDate + (86400000 * trip.duration);
       if (endDate < this.currentDate && !this.past.includes(trip)) {
-        this.past.push(trip)
+        this.past.push(trip);
       }
     })
   }
@@ -40,31 +40,31 @@ class Traveler {
   getPresentTrips() {
     this.allTrips.forEach(trip => {
       let startDate = new Date(trip.date).getTime();
-      let endDate = startDate + (86400000 * trip.duration)
+      let endDate = startDate + (86400000 * trip.duration);
       if (this.currentDate >= startDate && this.currentDate <= endDate
         && !this.present.includes(trip)) {
-        this.present.push(trip)
+        this.present.push(trip);
       }
-    })
+    });
 
   }
 
   getUpcomingTrips() {
     this.allTrips.forEach(trip => {
       let startDate = new Date(trip.date).getTime();
-      let endDate = startDate + (86400000 * trip.duration)
+      let endDate = startDate + (86400000 * trip.duration);
       if (endDate > this.currentDate && !this.upcoming.includes(trip)) {
-        this.upcoming.push(trip)
+        this.upcoming.push(trip);
       }
-    })
+    });
   }
 
   getPendingTrips() {
     this.allTrips.forEach(trip => {
      if (trip.status === 'pending' && !this.pending.includes(trip)) {
-       this.pending.push(trip)
+       this.pending.push(trip);
      }
-    })
+    });
   }
 
   calAmtSpentThisYear(year, destination) {
@@ -78,9 +78,9 @@ class Traveler {
           costForLiving = trip.duration * loc.estimatedLodgingCostPerDay;
           total += (costForFlights + costForLiving) * 0.1;
         }
-      })
+      });
       return total;
-    }, 0)
+    }, 0);
   }
 
 }

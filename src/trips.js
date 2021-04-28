@@ -7,8 +7,8 @@ class Trip {
     this.date = allTripsData.date;
     this.status = allTripsData.status;
     this.duration = allTripsData.duration;
-    this.suggestedActivities = [];
     this.destinations = allDestinationData;
+    this.suggestedActivities = [];
     this.currentDate;
     this.tripStartDate;
     this.tripEndDate;
