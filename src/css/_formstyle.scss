@@ -6,7 +6,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  // overflow: hidden;
 }
 
 .login-form {
@@ -46,11 +45,6 @@ input[type=password],
 button[type=submit],
 select {
   @include inputStyle()
-  // width: 100%;
-  // padding: 12px 20px;
-  // margin: 35px 0;
-  // border: 1px solid #7ab9c2;
-  // border-radius: 0.5rem;
 }
 
 .login-form > label {

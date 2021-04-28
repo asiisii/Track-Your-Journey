@@ -17,8 +17,6 @@ const agentout = document.getElementById('agentout');
 const dashboard = document.getElementById('dashboard');
 let currUserID, givenPassword, givenUsername;
 
-
-
 loginSubmit.addEventListener('click', checkTravelerCredentials)
 logoutSubmit.addEventListener('click', domUpdates.displayLogin)
 agentout.addEventListener('click', domUpdates.displayLogin)
