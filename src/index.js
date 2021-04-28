@@ -4,8 +4,8 @@ import './images/beach.png'
 import './images/logpage.png'
 import './images/background.png'
 import './images/agent.png'
-import domUpdates from './src/domUpdates'
-import { apiCalls } from './src/fetchData'
+import domUpdates from './domUpdates'
+import { apiCalls } from './fetchData'
 
 const loginError = document.getElementById('loginError');
 const loginpage = document.getElementById('loginpage');
