@@ -25,7 +25,6 @@
 
   .container {
     grid-template-columns: repeat(3, 1fr);
-    // justify-items: center;
   }
 }
 
@@ -44,7 +43,6 @@
 
   .container {
     grid-template-columns: repeat(2, 1fr);
-    // justify-items: center;
   }
 
   .welcome-message{
@@ -56,6 +54,13 @@
     margin: 1%;
   }
 
+  .agent-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
   .account {
     margin: 10px 2px 5px 0;
   }
@@ -65,13 +70,11 @@
   }
 
   header {
-    // @include flexStyle(column);
     text-align: center;
     height: 10%;
   }
   
 }
-
 
 //------------mobile 425px------
 @media screen and (max-width: 425px) {
@@ -97,16 +100,11 @@
   }
 
   header {
-    // @include flexStyle(column);
-    // display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
     height: 10%;
   }
   nav {
-    // @include flexStyle(row);
-    // flex-wrap: wrap;
-    // margin: 1%;
     width: 95% !important;
   }
 
@@ -144,18 +142,12 @@
   }
 
   nav {
-    // @include flexStyle(row);
     display: block;
-    // flex-direction: row;
-    // flex-wrap: wrap;
-    
-    // margin: 1%;
     width: 60%;
   }
 
   header {
     display: block;
-    // flex-direction: column;
     height: 15%;
   }
 

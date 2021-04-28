@@ -1,87 +1,82 @@
-// This is the JavaScript entry file - your code begins here
-// Do not delete or rename this file ********
-
-// An example of how you tell webpack to use a CSS (SCSS) file
 import './css/base.scss';
-
-// An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import './images/avatar.png'
 import './images/beach.png'
 import './images/logpage.png'
 import './images/background.png'
-// console.log('This is the JavaScript entry file - your code begins here.');
-
-//my code
+import './images/agent.png'
 import domUpdates from './domUpdates'
 import { apiCalls } from './fetchData'
-// import Trip from './trips';
-// import Traveler from './traveler'
 
-const loginError = document.getElementById('loginError')
-const loginpage = document.getElementById('loginpage')
+const loginError = document.getElementById('loginError');
+const loginpage = document.getElementById('loginpage');
 const usernameInput = document.getElementById('uname');
 const passInput = document.getElementById('password');
-const logForm = document.getElementById('loginForm');
 const loginSubmit = document.getElementById('login');
-const logoutSubmit = document.getElementById('logout')
-const dashboard = document.getElementById('dashboard')
-let currUserID;
-logForm.addEventListener('submit', (e) => e.preventDefault())
+const logoutSubmit = document.getElementById('logout');
+const agentout = document.getElementById('agentout');
+const dashboard = document.getElementById('dashboard');
+let currUserID, givenPassword, givenUsername;
 
-loginSubmit.addEventListener('click', checkCredentials)
-logoutSubmit.addEventListener('click', displayLogin)
 
-function checkCredentials() {
-  let givenUsername = usernameInput.value;
+
+loginSubmit.addEventListener('click', checkTravelerCredentials)
+logoutSubmit.addEventListener('click', domUpdates.displayLogin)
+agentout.addEventListener('click', domUpdates.displayLogin)
+
+function checkTravelerCredentials() {
+  givenUsername = usernameInput.value;
   let justname = givenUsername.split('traveler')[0] === ''
-  let givenPassword = passInput.value;
+  givenPassword = passInput.value;
   currUserID = Number(givenUsername.split('').slice(8).join(""))
-  
   if (givenPassword && givenUsername) {
-    if(currUserID && currUserID > 0 && 
-      currUserID < 50 && justname &&
-      givenPassword === 'travel2020') {
-      fetchData()
-      loginpage.classList.add('hidden')
-      dashboard.classList.remove('hidden')
-    } else {
-      logForm.reset();
-      loginError.innerText = `You have entered an invalid username or password`
+    checkAgencyCredentials()
+    if (!checkAgencyCredentials()) {
+      if(currUserID && currUserID > 0 && 
+        currUserID < 50 && justname &&
+        givenPassword === 'travel2020') {
+        fetchDataForTraveler()
+        loginpage.classList.add('hidden')
+        dashboard.classList.remove('hidden')
+      } else {
+        logForm.reset();
+        loginError.innerText = `You have entered an invalid username or password`
+      }
     }
-  
   }
 }
 
-
-function displayLogin() {
-  logForm.reset();
-  loginpage.classList.remove('hidden')
-  dashboard.classList.add('hidden')
+function checkAgencyCredentials() {
+  givenUsername = usernameInput.value;
+  givenPassword = passInput.value;
+  if(givenUsername === 'asiisii' &&
+    givenPassword === '2102FE') {
+    loginpage.classList.add('hidden')
+    agencyboard.classList.remove('hidden')
+    fetchDataForAgent()
+    return true;
+  } else {
+    return false;
+  }
+    
 }
-// window.addEventListener('load', checkCredentials);
-//get id from user's login name >> last two digit >> 
-          //probably has to use split and  splice
 
-function fetchData() {
+function fetchDataForTraveler() {
   Promise.all([apiCalls.fetchAllData(`travelers`), apiCalls.fetchAllData(`trips`), 
   apiCalls.fetchAllData(`destinations`), apiCalls.currentTraveler(`travelers/${currUserID}`)])
     .then(data => {
       domUpdates.assignData(data)
     })
-    
-
-    // .catch
 }
 
-// const usernameInput = document.getElementId('username').value
-//eg: 
-// const usernameInput = 'traveler09'
-// 
+function fetchDataForAgent() {
+  Promise.all([apiCalls.fetchAllData(`trips`), 
+  apiCalls.fetchAllData(`destinations`)])
+    .then(data => {
+      domUpdates.getAgentData(data, givenUsername);
+    })
+}
 
-// if(userID === '09') {
-//   console.log('yeeet')
-// }
-// apiCalls.deleteTrip(1619554130751)
+
 
 
 
