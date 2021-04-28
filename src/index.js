@@ -53,6 +53,7 @@ function checkAgencyCredentials() {
     fetchDataForAgent()
     return true;
   } else {
+    loginError.innerText = `You have entered an invalid username or password`
     return false;
   }
     
