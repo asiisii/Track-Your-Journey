@@ -30,12 +30,12 @@ The [goal](https://frontend.turing.io/projects/module-1/tic-tac-toe-solo.html) o
 
 ## To Login
 #### For traveler
-Username: traveler + any number 1 - 50
-Password: traveler2020
+- Username: traveler + any number 1 - 50
+- Password: traveler2020
 
 #### For Agent
-Username: asiisii
-Password: 2102FE
+- Username: asiisii
+- Password: 2102FE
 
 ---
 ## Features 
