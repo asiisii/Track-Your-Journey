@@ -1,19 +1,74 @@
-# Webpack Starter Kit
+# Track Your Journey
 
-## Clone This Repo
+### Table of Contents
+- [Track Your Journey](#track-your-journey)
+    - [Table of Contents](#table-of-contents)
+  - [Overview and Project Goals](#overview-and-project-goals)
+  - [To Login](#to-login)
+      - [For traveler](#for-traveler)
+      - [For Agent](#for-agent)
+  - [Features](#features)
+  - [Why was this project created?](#why-was-this-project-created)
+  - [Technologies Used](#technologies-used)
+  - [- Mocha & Chai](#--mocha--chai)
+  - [Setup](#setup)
+  - [How to View Your Code in Action](#how-to-view-your-code-in-action)
+  - [How to View Your Code in Action](#how-to-view-your-code-in-action-1)
+  - [Test Files Organization](#test-files-organization)
+  - [Running Your Tests](#running-your-tests)
+  - [Credits](#credits)
+      - [Authors](#authors)
+      - [Code Reviewer](#code-reviewer)
+      - [Project Manager](#project-manager)
+          - [This project was created for Turing School of Software and Design](#this-project-was-created-for-turing-school-of-software-and-design)
+          - [2021/04/27](#20210427)
+  
+## Overview and Project Goals
+The [goal](https://frontend.turing.io/projects/module-1/tic-tac-toe-solo.html) of this solo final project I did for Mod2 at [Turing School of Software and Design](https://turing.io/) is to build an application to track travlers info using given API data from scratch using HTML, SCSS, CSS, and Vanilla Javascript.
 
-That's right, _clone_ not fork. You will use this repo multiple times, but you can only fork a repository once. So here is what you need to do to clone the repo and still be able to push changes to your repo:
+---
 
-1. Clone down this repo. Since you don't want to name your project "webpack-starter-kit", you can use an optional argument when you run `git clone` (you replace the `[...]` with the terminal command arguments): `git clone [remote-address] [what you want to name the repo]`
-1. Remove the default remote: `git remote rm origin` (notice that `git remote -v` not gives you back nothing)
-1. Create a new repo on GitHub with the name of `[what you want to name the repo]` to be consistent with naming
-1. Copy the address that you would use to clone down this repo - something like `git@github.com:...`
-1. Add this remote to your cloned down repo: `git remote add origin [address you copied in the previous step]` - do not include the brackets
+## To Login
+#### For traveler
+Username: traveler + any number 1 - 50
+Password: traveler2020
 
-Now try to commit something and push it up to your new repo. If everything is setup correctly, you should see the changes on GitHub.
+#### For Agent
+Username: asiisii
+Password: 2102FE
+
+---
+## Features 
+Traveler Login/Dashboard: 
+Traveler can login using above credentials. After successfully logging in, traveler will be able to see all their history and upcoming trips. They have options to request for a new trip as well. On load they will be able to see how much they have spent in current year. 
+![Traveler Dashbaord](./src/images/traveler.gif)
+
+Agent Login/Dashboard:
+Agent can login using above credentials. After sucessfully loggin in, they will be able to see their yearly income and travelers requested trips. By clicking on a trip card they can reject the traveler's request as well. 
+![Agent Dashbaord](./src/images/agent.gif)
+
+
+
+## Why was this project created?
+To solidify and demonstrate the understanding of:
+- Using OOP to drive the design of the application and the code
+- Working with an API to send and receive data
+- Creating a robust test suite that thoroughly tests all functionality of a client-side application
+
+## Technologies Used
+- HTML
+- CSS/Sass 
+- Webpack (Sass compiler)
+- Javascript
+- Mocha & Chai
+---
 
 ## Setup
-
+1. Clone down this repo. Since you don't want to name your project "webpack-starter-kit", you can use an optional argument when you run `git clone` (you replace the `[...]` with the terminal command arguments): `git clone [remote-address] [what you want to name the repo]`
+2. Remove the default remote: `git remote rm origin` (notice that `git remote -v` not gives you back nothing)
+3. Create a new repo on GitHub with the name of `[what you want to name the repo]` to be consistent with naming
+4. Copy the address that you would use to clone down this repo - something like `git@github.com:...`
+5. Add this remote to your cloned down repo: `git remote add origin [address you copied in the previous step]` - do not include the brackets
 After one person has gone through the steps of cloning down this repo and editing the remote, everyone should clone down the repo. 
 
 Then install the library dependencies. Run:
@@ -21,34 +76,20 @@ Then install the library dependencies. Run:
 ```bash
 npm install
 ```
+---
 
-To verify that it is setup correctly, run `npm start` in your terminal. Go to `http://localhost:8080/` and you should see a page with some `h1` text, Turing logo image and a beautiful gradient background. If that's the case, you're good to go. Enter `control + c` in your terminal to stop the server at any time.
+## How to View Your Code in Action
+1. In the terminal, run:
+```bash
+npm start
+```
+2. You will see a bunch of lines output to your terminal. One of those lines will be something like:
+```bash
+Project is running at http://localhost:8080/
+```
+3. Go to `http://localhost:8080/` in your browser to view your code running in the browser.
 
-## Where to Add Your Code
-
-### JavaScript
-
-You have to be very intentional with where you add your feature code. This repo uses a tool called [webpack](https://webpack.js.org/) to combine many JavaScript files into one big file. Webpack enables you to have many, separate JavaScript files to keep your code organized and readable. Webpack expects all of your code files to be in a specific place, or else it doesn't know how to combine them all behind the scenes.
-
-**Create all of your feature code files in the `src` directory.**
-
-Since code is separated into multiple files, you need to use the `import` and `export` syntax to share code across file.
-
-Here is a video that walks through some information about [import and export](https://www.youtube.com/watch?v=_3oSWwapPKQ). There are a lot of resources out there about `import` and `export`, and resources will sometimes call them `ES6 modules`. It's something you will see in React and beyond.
-
-### HTML
-
-Add the HTML you need in the `index.html` file in the `./src` directory. There is some boilerplate HTML that exists from the start that you can modify.
-
-### CSS (SCSS/SASS)
-
-This project is setup to use SCSS/SASS files by default instead of your regular CSS files. Add your SCSS files in the `src/css` directory. There is a `base.scss` file already there, but you can change this file and add multiple SCSS files in this directory.
-
-This might sound weird, but you need to `import` your SCSS files in the JavaScript entry file (`index.js`) for the styles to be applied to your HTML. The example `base.scss` file has already been imported in the JavaScript entry file as an example.
-
-### Images
-
-Add your image files in the `src/images` directory. Similar to CSS files, you need to `import` image files in the JavaScript entry file (`index.js`). Then go into the HTML and add an `img` element with the `src` attribute pointing to the `images` directory. There is an example in the `index.html` file for you to see.
+---
 
 ## How to View Your Code in Action
 
@@ -85,21 +126,42 @@ npm test
 The test results will output to the terminal.
 
 ---
+## Credits
+#### Authors
+<table>
+    <tr>
+        <td> Ashish Malla <a href="https://github.com/asiisii">GH</td>
+    </tr>
+    </tr>
+    <td><img src="https://avatars.githubusercontent.com/u/36644181?s=400&u=bac07fd62de7d01a09ce8f27f88590d5caa202df&v=4" alt="Asiisii GH img"
+ width="150" height="auto" /></td>
+    </tr>
+</table>
 
-## Linting Your Code
+#### Code Reviewer
+<table>
+    <tr>
+      <td> Tyson McNutt <a href="https://github.com/tysnj">GH (accountabilibuddy)</td>
+    </tr>
+    </tr>
+ <td><img src="https://avatars.githubusercontent.com/u/65634894?v=4" alt="Tyson McNutt GH img"
+ width="150" height="auto" /></td>
+</tr>
+</table>
 
-Run the command in your terminal `npm run lint` to run the linter on your JavaScript code. There will be errors and warnings right from the start in this starter kit - the linter is still running successfully.
+#### Project Manager
+<table>
+    <tr>
+         <td> Hannah Hudson <a href="https://github.com/hannahhch">GH</td>
+    </tr>
+    </tr>
+    <td><img src="https://avatars.githubusercontent.com/u/26528259?s=400&u=fa83afc7263cd5ba9b3a9f07e8ae78543c359063&v=4" alt="hannahhch GH img"
+ width="150" height="auto" /></td>
+</tr>
+</table>
 
-Your linter will look at the JavaScript files you have within the `src` directory and the `test` directory. 
 
-## Webpack?
-
-If you look in the `package.json` file, you'll see one of the library dependencies called `webpack`. If you're interested in learning more about what Webpack is and how it works behind the scenes, take a look through the [Webpack configuration documentation](https://webpack.js.org/concepts/).
-
-## Deploying to GitHub Pages
-
-_If you are finished with the functionality and testing of your project_, then you can consider deploying your project to the web! This way anyone can play it without cloning down your repo.
-
-[GitHub Pages](https://pages.github.com/) is a great way to deploy your project to the web. Don't worry about this until your project is free of bugs and well tested!
-
-If you _are_ done, you can follow [this procedure](./gh-pages-procedure.md) to get your project live on GitHub Pages.
+**************************************************************************
+###### This project was created for [Turing School of Software and Design](https://turing.io/)
+###### 2021/04/27
+**[Back to top](#table-of-contents)**
