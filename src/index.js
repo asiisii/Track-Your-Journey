@@ -37,7 +37,6 @@ function checkTravelerCredentials() {
         dashboard.classList.remove('hidden')
       } else {
         logForm.reset();
-        loginError.innerText = `You have entered an invalid username or password`
       }
     }
   }
