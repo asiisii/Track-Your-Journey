@@ -79,7 +79,7 @@ npm install
 ---
 
 ## How to View Your Code in Action
-1. You'll need this [Webpack Starter Kit](https://github.com/turingschool-examples/webpack-starter-kit) repo. Setup instructions are in the README. You will also need to clone down this local server and have it running in a separate tab in your terminal each time you run your client.
+1. You'll need to clone down this [local server](https://github.com/turingschool-examples/travel-tracker-api) and have it running in a separate tab in your terminal each time you run your client.
 2. Click on this [website link](https://asiisii.github.io/Track-Your-Journey/)
 
 ---
