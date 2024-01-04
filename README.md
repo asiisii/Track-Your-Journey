@@ -131,27 +131,6 @@ The test results will output to the terminal.
     </tr>
 </table>
 
-#### Code Reviewer
-<table>
-    <tr>
-      <td> Tyson McNutt <a href="https://github.com/tysnj">GH (accountabilibuddy)</td>
-    </tr>
-    </tr>
- <td><img src="https://avatars.githubusercontent.com/u/65634894?v=4" alt="Tyson McNutt GH img"
- width="150" height="auto" /></td>
-</tr>
-</table>
-
-#### Project Manager
-<table>
-    <tr>
-         <td> Hannah Hudson <a href="https://github.com/hannahhch">GH</td>
-    </tr>
-    </tr>
-    <td><img src="https://avatars.githubusercontent.com/u/26528259?s=400&u=fa83afc7263cd5ba9b3a9f07e8ae78543c359063&v=4" alt="hannahhch GH img"
- width="150" height="auto" /></td>
-</tr>
-</table>
 
 
 **************************************************************************
